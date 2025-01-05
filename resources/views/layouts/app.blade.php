@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Aplikacja Wystawy Kotów')</title>
+    <title>@yield('title', 'Wystawa Psów')</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Wstaw w sekcji <head> -->
@@ -11,7 +11,6 @@
 </head>
 <body>
     <header>
-        <h1><a href="{{ route('home') }}" style="text-decoration: none; color: white;">Aplikacja Laravel</a></h1>
         <nav>
             @if(session('user'))
                 @if(session('user')->rola == 'administrator')
@@ -65,11 +64,6 @@
     <main>
         @yield('content')
     </main>
-
-    <footer>
-        <p>© 2025 Aplikacja Wystawy Kotów</p>
-    </footer>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
