@@ -43,8 +43,6 @@
                         <li><a href="{{ route('wystawy.index') }}">Wystawy</a></li>
                     </ul>
                 @endif
-            @else
-                <h1>Gość</h1>
             @endif
         </nav>
         
@@ -52,11 +50,6 @@
             <div style="text-align: right; color: white;">
                 <span>Witaj, {{ session('user')->nazwa_uzytkownika }}!</span>
                 <a style="color: white;" href="{{ route('logout') }}">Wyloguj</a>
-            </div>
-        @else
-            <div>
-                <a href="{{ route('login.form') }}">Zaloguj</a> |
-                <a href="{{ route('register.form') }}">Zarejestruj</a>
             </div>
         @endif
     </header>
