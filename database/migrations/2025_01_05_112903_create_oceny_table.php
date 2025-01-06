@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('oceny', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_zgloszenie')->constrained('psy'); // Klucz obcy do tabeli psy
+            $table->integer('ocena');
+            $table->text('komentarze')->nullable();
+            $table->date('data_oceny');
             $table->timestamps();
         });
     }

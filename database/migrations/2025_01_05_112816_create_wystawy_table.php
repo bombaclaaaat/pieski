@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('wystawy', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('nazwa');
+            $table->date('data_rozpoczecia');
+            $table->date('data_zakonczenia');
+            $table->string('miejsce');
+            $table->text('opis');
+            $table->timestamps(); // Data utworzenia
         });
     }
 

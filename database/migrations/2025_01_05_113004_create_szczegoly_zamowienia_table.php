@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('szczegoly_zamowienia', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('zamowienie_id')->constrained('zamowienia'); // Klucz obcy do tabeli zamowienia
+            $table->foreignId('bilet_id')->constrained('bilety'); // Klucz obcy do tabeli bilety
+            $table->integer('ilosc');
+            $table->decimal('cena', 8, 2);
+            $table->decimal('cena_calkowita', 10, 2);
             $table->timestamps();
         });
     }

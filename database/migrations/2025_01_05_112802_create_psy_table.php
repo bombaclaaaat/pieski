@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('psy', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('imie');
+            $table->string('rasa');
+            $table->integer('wiek');
+            $table->string('kolor');
+            $table->enum('plec', ['samiec', 'samica']);
+            $table->foreignId('wlaściciel_id')->constrained('uzytkownicy'); // Klucz obcy
+            $table->text('opis')->nullable();
+            $table->timestamps(); // Data utworzenia
         });
     }
 

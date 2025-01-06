@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('sponsorzy', function (Blueprint $table) {
             $table->id();
+            $table->string('nazwa');
+            $table->text('dane_kontaktowe');
+            $table->decimal('wniosek', 10, 2);
             $table->timestamps();
         });
     }

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('zamowienia', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('klient_id')->constrained('uzytkownicy'); // Klucz obcy do tabeli uzytkownicy
+            $table->date('data_zamowienia');
+            $table->decimal('cena_calkowita', 10, 2);
+            $table->enum('status', ['oczekujące', 'zrealizowane']);
+            $table->enum('status_platnosci', ['oczekująca', 'zapłacona']);
             $table->timestamps();
         });
     }

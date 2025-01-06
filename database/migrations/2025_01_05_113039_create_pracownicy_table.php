@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('pracownicy', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('uzytkownik_id')->constrained('uzytkownicy'); // Klucz obcy do tabeli uzytkownicy
+            $table->string('rola');
+            $table->date('data_zatrudnienia');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

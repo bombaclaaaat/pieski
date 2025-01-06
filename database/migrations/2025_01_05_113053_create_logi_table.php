@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('logi', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('uzytkownik_id')->constrained('uzytkownicy'); // Klucz obcy do tabeli uzytkownicy
+            $table->text('akcja');
+            $table->date('data_akcji');
             $table->timestamps();
         });
     }

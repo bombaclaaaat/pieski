@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('metody_platnosci', function (Blueprint $table) {
             $table->id();
+            $table->string('nazwa');
+            $table->text('opis')->nullable();
             $table->timestamps();
         });
     }
